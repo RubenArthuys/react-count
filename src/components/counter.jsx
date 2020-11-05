@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
+  componentDidUpdate(previousProps, previousState) {
+    console.log('previousProps - previousProps');
+    console.log('previousState - previousState');
+    if (previousProps.counter.value !== this.props.counter.value) {
+      // Ajax call and get new data form the server
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('Counter - Unmount');
+  }
+
   render() { 
+    console.log('Counter - Rendered');
+
     return (
       //React.Fragment to delete div - won't appear in console Elements
       <div>
